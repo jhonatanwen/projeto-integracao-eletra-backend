@@ -6,7 +6,7 @@
 
     <groupId>com.eletra</groupId>
     <artifactId>projeto-integracao-backend</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
