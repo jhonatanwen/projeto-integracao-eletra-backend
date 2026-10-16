@@ -7,7 +7,7 @@ import java.util.List;
 public class LineController {
    private final LineRepository lineRepository;
 
-   public LineController(LineRepository lineRepository) {
+   public LineController() {
        this.lineRepository = new LineRepository();
    }
 
