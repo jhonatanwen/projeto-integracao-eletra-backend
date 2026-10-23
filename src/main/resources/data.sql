@@ -3,23 +3,23 @@ DROP TABLE IF EXISTS tb_category;
 DROP TABLE IF EXISTS tb_line;
 
 CREATE TABLE tb_line(
-    id BIGINT PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE tb_category(
-    id BIGINT PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    line_id BIGINT NOT NULL,
+    line_id INTEGER NOT NULL,
     CONSTRAINT fk_category_line FOREIGN KEY (line_id)
         REFERENCES tb_line (id)
         ON DELETE CASCADE
 );
 
 CREATE TABLE tb_model(
-    id BIGINT PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    category_id BIGINT NOT NULL,
+    category_id INTEGER NOT NULL,
     CONSTRAINT fk_model_category FOREIGN KEY (category_id)
         REFERENCES tb_category (id)
         ON DELETE CASCADE

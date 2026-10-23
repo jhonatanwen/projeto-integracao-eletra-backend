@@ -12,7 +12,7 @@ public class CategoryController {
         this.categoryRepository = new CategoryRepository();
     }
 
-    public List<CategoryEntity>getCategoriesByLineId(Long lineId) {
+    public List<CategoryEntity>getCategoriesByLineId(Integer lineId) {
         return categoryRepository.findByLineId(lineId);
     }
 }

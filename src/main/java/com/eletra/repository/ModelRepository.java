@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ModelRepository {
-    public List<ModelEntity> findByCategoryId(Long categoryId) {
+    public List<ModelEntity> findByCategoryId(Integer categoryId) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("FROM ModelEntity m WHERE m.category.id = :categoryId ORDER BY m.id",ModelEntity.class)
                     .setParameter("categoryId", categoryId)

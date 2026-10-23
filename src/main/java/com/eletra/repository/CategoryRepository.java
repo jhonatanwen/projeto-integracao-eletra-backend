@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class CategoryRepository {
-    public List<CategoryEntity> findByLineId(Long lineId) {
+    public List<CategoryEntity> findByLineId(Integer lineId) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session
                     .createQuery("FROM CategoryEntity c WHERE c.line.id = :lineId ORDER BY c.id", CategoryEntity.class)

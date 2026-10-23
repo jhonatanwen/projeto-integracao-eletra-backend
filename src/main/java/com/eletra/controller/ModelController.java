@@ -12,7 +12,7 @@ public class ModelController {
         this.modelRepository = new ModelRepository();
     }
 
-    public List<ModelEntity> getModelsByCategoryId(Long categoryId) {
+    public List<ModelEntity> getModelsByCategoryId(Integer categoryId) {
         return modelRepository.findByCategoryId(categoryId);
     }
 }
