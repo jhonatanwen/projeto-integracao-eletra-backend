@@ -10,11 +10,9 @@
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">jhon0211</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
-        <!-- Exibe os comandos SQL executados no console -->
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <!-- Mapeamento das Entidades -->
         <mapping class="com.eletra.model.LineEntity"/>
         <mapping class="com.eletra.model.CategoryEntity"/>
         <mapping class="com.eletra.model.ModelEntity"/>
