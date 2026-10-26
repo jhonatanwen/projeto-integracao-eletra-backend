@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/inteproj_db?charSet=WIN1252</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">jhon0211</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="com.eletra.model.LineEntity"/>
+        <mapping class="com.eletra.model.CategoryEntity"/>
+        <mapping class="com.eletra.model.ModelEntity"/>
+    </session-factory>
+</hibernate-configuration>
