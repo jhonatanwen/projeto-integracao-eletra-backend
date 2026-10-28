@@ -1,7 +1,7 @@
 package com.eletra.controller;
 
-import com.eletra.model.LineEntity;
-import com.eletra.repository.LineRepository;
+import com.eletra.dto.LineDTO;
+import com.eletra.service.LineService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
@@ -14,15 +14,13 @@ import java.util.List;
 @RequestMapping("api/lines")
 @Tag(name = "Lines", description = "Endpoint de linhas dos medidores")
 public class LineController {
-   private final LineRepository lineRepository;
+    private final LineService lineService;
 
-   public LineController() {
-       this.lineRepository = new LineRepository();
-   }
+    public LineController(LineService lineService) { this.lineService = lineService; }
 
-   @GetMapping
-   @Operation
-   public ResponseEntity<List<LineEntity>> getAllLines() {
-       return ResponseEntity.ok(lineRepository.findAll());
+   @GetMapping("/")
+   @Operation(summary = "Lista todas as linhas dos medidores")
+   public ResponseEntity<List<LineDTO>> getAllLines() {
+       return ResponseEntity.ok(lineService.getAllLines());
    }
 }
