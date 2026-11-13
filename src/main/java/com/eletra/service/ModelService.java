@@ -22,6 +22,10 @@ public class ModelService {
     }
 
     public ModelDTO toDTO(ModelEntity entity, Integer categoryId) {
-        return new ModelDTO(entity.getId(), entity.getName(), categoryId);
+        return ModelDTO.builder()
+                .withId(entity.getId())
+                .withName(entity.getName())
+                .withCategoryId(categoryId)
+                .build();
     }
 }

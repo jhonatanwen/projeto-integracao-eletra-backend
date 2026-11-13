@@ -22,6 +22,10 @@ public class CategoryService {
     }
 
     public CategoryDTO toDTO(CategoryEntity entity, Integer lineId) {
-        return new CategoryDTO(entity.getId(), entity.getName(), lineId);
+        return CategoryDTO.builder()
+                .withId(entity.getId())
+                .withName(entity.getName())
+                .withLineId(lineId)
+                .build();
     }
 }

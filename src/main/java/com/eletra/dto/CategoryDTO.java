@@ -21,4 +21,31 @@ public class CategoryDTO {
 
     public Integer getLineId() { return lineId; }
     public void setLineId(Integer lineId) { this.lineId = lineId; }
+
+    public static Builder builder() { return new Builder(); }
+
+    public static class Builder {
+        private Integer id;
+        private String name;
+        private Integer lineId;
+
+        public Builder withId(Integer id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder withLineId(Integer lineId) {
+            this.lineId = lineId;
+            return this;
+        }
+
+        public CategoryDTO build() {
+            return new CategoryDTO(id, name, lineId);
+        }
+    }
 }

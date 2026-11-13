@@ -23,6 +23,9 @@ public class LineService {
 
 
     private LineDTO toDTO(LineEntity entity) {
-        return new LineDTO(entity.getId(), entity.getName());
+        return LineDTO.builder()
+                .withId(entity.getId())
+                .withName(entity.getName())
+                .build();
     }
 }
