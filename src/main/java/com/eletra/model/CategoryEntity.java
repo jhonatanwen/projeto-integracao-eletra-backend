@@ -24,17 +24,10 @@ public class CategoryEntity {
     }
 
     public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
 
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public LineEntity getLine() { return line; }
-    public void setLine(LineEntity line) { this.line = line; }
 
     @Override
     public String toString() {

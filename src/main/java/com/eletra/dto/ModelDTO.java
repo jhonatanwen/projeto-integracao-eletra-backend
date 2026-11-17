@@ -5,8 +5,6 @@ public class ModelDTO {
     private String name;
     private Integer categoryId;
 
-    public ModelDTO() {}
-
     public ModelDTO(Integer id, String name, Integer categoryId) {
         this.id = id;
         this.name = name;
@@ -14,13 +12,8 @@ public class ModelDTO {
     }
 
     public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
 
     public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public Integer getCategoryId() { return categoryId; }
-    public void setCategoryId(Integer categoryId) { this.categoryId = categoryId; }
 
     public static Builder builder() { return new Builder(); }
 
