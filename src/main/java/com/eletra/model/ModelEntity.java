@@ -24,17 +24,12 @@ public class ModelEntity {
     }
 
     public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
 
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public CategoryEntity getCategory() { return category; }
-    public void setCategory(CategoryEntity category) { this.category = category; }
+    public  CategoryEntity getCategory() { return category; }
 
     @Override
     public String toString() {

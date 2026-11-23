@@ -3,9 +3,11 @@ package com.eletra.repository;
 import com.eletra.model.CategoryEntity;
 import com.eletra.util.HibernateUtil;
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 import java.util.Collections;
 import java.util.List;
 
+@Repository
 public class CategoryRepository {
     public List<CategoryEntity> findByLineId(Integer lineId) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {
