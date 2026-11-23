@@ -29,6 +29,8 @@ public class ModelEntity {
         return name;
     }
 
+    public  CategoryEntity getCategory() { return category; }
+
     @Override
     public String toString() {
         return this.name;

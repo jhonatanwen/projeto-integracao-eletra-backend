@@ -29,6 +29,8 @@ public class CategoryEntity {
         return name;
     }
 
+    public LineEntity getLine() { return line; }
+
     @Override
     public String toString() {
         return this.name;

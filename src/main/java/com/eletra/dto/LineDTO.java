@@ -4,6 +4,8 @@ public class LineDTO {
     private Integer id;
     private String name;
 
+    public LineDTO() {}
+
     public LineDTO(Integer id, String name) {
         this.id = id;
         this.name = name;
