@@ -21,6 +21,7 @@ public class ModelServiceTest {
     @Mock
     private ModelRepository modelRepository;
 
+    private final Integer categoryId = 1;
     private ModelEntity cronos6001AEntity;
     private ModelEntity cronos6003Entity;
     private ModelEntity cronos7023Entity;
@@ -34,7 +35,7 @@ public class ModelServiceTest {
         cronosEntity.setId(1);
 
         CategoryEntity cronosOldEntity = new CategoryEntity("Cronos Old", cronosEntity);
-        cronosOldEntity.setId(1);
+        cronosOldEntity.setId(categoryId);
 
         cronos6001AEntity = new ModelEntity("Cronos 6001-A", cronosOldEntity);
         cronos6001AEntity.setId(1);
@@ -53,13 +54,14 @@ public class ModelServiceTest {
         modelEntities.add(cronos6003Entity);
         modelEntities.add(cronos7023Entity);
 
-        when(modelRepository.findByCategoryId(1)).thenReturn(modelEntities);
+        when(modelRepository.findByCategoryId(categoryId)).thenReturn(modelEntities);
 
 
         List<ModelDTO> result = modelService.getModelsByCategoryId(1);
 
         assertEquals(3, result.size());
 
+        assertEquals(categoryId, result.get(0).getCategoryId());
         assertEquals(Integer.valueOf(1), result.get(0).getId());
         assertEquals(Integer.valueOf(2), result.get(1).getId());
         assertEquals(Integer.valueOf(3), result.get(2).getId());

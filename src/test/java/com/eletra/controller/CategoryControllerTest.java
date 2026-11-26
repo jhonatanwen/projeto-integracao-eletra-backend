@@ -20,6 +20,7 @@ public class CategoryControllerTest {
     @Mock
     private CategoryService categoryService;
 
+    private final Integer lineId = 1;
     private CategoryDTO cronosOld;
     private CategoryDTO cronosL;
     private CategoryDTO cronosNG;
@@ -29,9 +30,9 @@ public class CategoryControllerTest {
 
     @Before
     public void setUp() {
-        cronosOld = new CategoryDTO(1, "Cronos Old", 1);
-        cronosL = new CategoryDTO(2, "Cronos L", 1);
-        cronosNG = new CategoryDTO(3, "Cronos NG", 1);
+        cronosOld = new CategoryDTO(1, "Cronos Old", lineId);
+        cronosL = new CategoryDTO(2, "Cronos L", lineId);
+        cronosNG = new CategoryDTO(3, "Cronos NG", lineId);
     }
 
     @Test
@@ -41,13 +42,14 @@ public class CategoryControllerTest {
         categoryDTOs.add(cronosL);
         categoryDTOs.add(cronosNG);
 
-        when(categoryService.getCategoriesByLineId(1)).thenReturn(categoryDTOs);
+        when(categoryService.getCategoriesByLineId(lineId)).thenReturn(categoryDTOs);
 
         ResponseEntity<List<CategoryDTO>> result = categoryController.getCategoriesByLineId(1);
 
         assertNotNull(result.getBody());
         assertEquals(3, result.getBody().size());
 
+        assertEquals(lineId, result.getBody().get(0).getLineId());
         assertEquals(Integer.valueOf(1), result.getBody().get(0).getId());
         assertEquals(Integer.valueOf(2), result.getBody().get(1).getId());
         assertEquals(Integer.valueOf(3), result.getBody().get(2).getId());

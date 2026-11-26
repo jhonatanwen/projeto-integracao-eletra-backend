@@ -20,6 +20,7 @@ public class ModelControllerTest {
     @Mock
     private ModelService modelService;
 
+    private final Integer categoryId = 1;
     private ModelDTO cronos6001ADTO;
     private ModelDTO cronos6003DTO;
     private ModelDTO cronos7023DTO;
@@ -29,9 +30,9 @@ public class ModelControllerTest {
 
     @Before
     public void setUp() {
-        cronos6001ADTO = new ModelDTO(1, "Cronos 6001-A", 1);
-        cronos6003DTO = new ModelDTO(2, "Cronos 6003", 1);
-        cronos7023DTO = new ModelDTO(3, "Cronos 7023", 1);
+        cronos6001ADTO = new ModelDTO(1, "Cronos 6001-A", categoryId);
+        cronos6003DTO = new ModelDTO(2, "Cronos 6003", categoryId);
+        cronos7023DTO = new ModelDTO(3, "Cronos 7023", categoryId);
     }
 
     @Test
@@ -41,7 +42,7 @@ public class ModelControllerTest {
         modelDTOs.add(cronos6003DTO);
         modelDTOs.add(cronos7023DTO);
 
-        when(modelService.getModelsByCategoryId(1)).thenReturn(modelDTOs);
+        when(modelService.getModelsByCategoryId(categoryId)).thenReturn(modelDTOs);
 
         ResponseEntity<List<ModelDTO>> result = modelController.getModelsByCategoryId(1);
 
@@ -49,6 +50,7 @@ public class ModelControllerTest {
 
        assertEquals(3, result.getBody().size());
 
+       assertEquals(categoryId, result.getBody().get(0).getCategoryId());
        assertEquals(Integer.valueOf(1), result.getBody().get(0).getId());
        assertEquals(Integer.valueOf(2), result.getBody().get(1).getId());
        assertEquals(Integer.valueOf(3), result.getBody().get(2).getId());

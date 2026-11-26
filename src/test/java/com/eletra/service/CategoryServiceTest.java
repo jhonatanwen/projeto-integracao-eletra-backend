@@ -20,6 +20,7 @@ public class CategoryServiceTest {
     @Mock
     private CategoryRepository categoryRepository;
 
+    private final Integer lineId = 1;
     private CategoryEntity cronosOldEntity;
     private CategoryEntity cronosLEntity;
     private CategoryEntity cronosNGEntity;
@@ -30,7 +31,7 @@ public class CategoryServiceTest {
     @Before
     public void setUp(){
         LineEntity cronosEntity = new LineEntity("Cronos");
-        cronosEntity.setId(1);
+        cronosEntity.setId(lineId);
 
         cronosOldEntity = new CategoryEntity("Cronos Old", cronosEntity);
         cronosOldEntity.setId(1);
@@ -49,12 +50,13 @@ public class CategoryServiceTest {
         categoryEntities.add(cronosLEntity);
         categoryEntities.add(cronosNGEntity);
 
-        when(categoryRepository.findByLineId(1)).thenReturn(categoryEntities);
+        when(categoryRepository.findByLineId(lineId)).thenReturn(categoryEntities);
 
         List<CategoryDTO> result = categoryService.getCategoriesByLineId(1);
 
         assertEquals(3, result.size());
 
+        assertEquals(lineId, result.get(0).getLineId());
         assertEquals(Integer.valueOf(1), result.get(0).getId());
         assertEquals(Integer.valueOf(2), result.get(1).getId());
         assertEquals(Integer.valueOf(3), result.get(2).getId());
