@@ -18,9 +18,8 @@ public class ModelEntityTest {
         CategoryEntity category = new CategoryEntity("Cronos Old", line);
         category.setId(1);
 
+        model = new ModelEntity("Cronos 6001-A", category);
         model.setId(1);
-        model.setName("Cronos 6001-A");
-        model.setCategory(category);
 
         assertEquals(Integer.valueOf(1), model.getId());
         assertEquals("Cronos 6001-A", model.getName());
@@ -31,9 +30,7 @@ public class ModelEntityTest {
     @Test
     public void parameterizedConstructorTest() {
         LineEntity line = new LineEntity("Ares");
-        line.setId(2);
         CategoryEntity category = new CategoryEntity("Ares TB", line);
-        category.setId(4);
 
         ModelEntity model = new ModelEntity("ARES 7021", category);
 

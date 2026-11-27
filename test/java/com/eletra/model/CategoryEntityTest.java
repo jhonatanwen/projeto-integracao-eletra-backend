@@ -16,9 +16,8 @@ public class CategoryEntityTest {
         LineEntity line = new LineEntity("Cronos");
         line.setId(1);
 
+        category = new CategoryEntity("Cronos Old", line);
         category.setId(1);
-        category.setName("Cronos Old");
-        category.setLine(line);
 
         assertEquals(Integer.valueOf(1), category.getId());
         assertEquals("Cronos Old", category.getName());

@@ -12,8 +12,8 @@ public class LineEntityTest {
         assertNull(line.getId());
         assertNull(line.getName());
 
+        line = new LineEntity("Cronos");
         line.setId(1);
-        line.setName("Cronos");
 
         assertEquals(Integer.valueOf(1), line.getId());
         assertEquals("Cronos", line.getName());
