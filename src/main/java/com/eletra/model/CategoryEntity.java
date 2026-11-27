@@ -29,8 +29,10 @@ public class CategoryEntity {
     public String getName() {
         return name;
     }
+    public void setName(String name) { this.name = name; }
 
     public LineEntity getLine() { return line; }
+    public void setLine(LineEntity line) { this.line = line; }
 
     @Override
     public String toString() {
