@@ -18,7 +18,8 @@ public class CategoryEntity {
 
     public CategoryEntity() {}
 
-    public CategoryEntity(String name, LineEntity line) {
+    public CategoryEntity(Integer id, String name, LineEntity line) {
+        this.id = id;
         this.name = name;
         this.line = line;
     }

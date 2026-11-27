@@ -18,7 +18,8 @@ public class ModelEntity {
 
     public ModelEntity() {}
 
-    public ModelEntity(String name, CategoryEntity category) {
+    public ModelEntity(Integer id, String name, CategoryEntity category) {
+        this.id = id;
         this.name = name;
         this.category = category;
     }

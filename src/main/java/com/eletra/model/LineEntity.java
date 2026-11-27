@@ -14,7 +14,8 @@ public class LineEntity {
 
     public LineEntity() {}
 
-    public LineEntity(String name) {
+    public LineEntity(Integer id, String name) {
+        this.id = id;
         this.name = name;
     }
 
