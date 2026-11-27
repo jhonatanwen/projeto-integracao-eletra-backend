@@ -18,13 +18,13 @@ public class CategoryEntity {
 
     public CategoryEntity() {}
 
-    public CategoryEntity(String name, LineEntity line) {
+    public CategoryEntity(Integer id, String name, LineEntity line) {
+        this.id = id;
         this.name = name;
         this.line = line;
     }
 
     public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
 
     public String getName() {
         return name;

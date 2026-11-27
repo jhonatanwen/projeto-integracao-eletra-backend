@@ -13,30 +13,14 @@ public class ModelEntityTest {
         assertNull(model.getName());
         assertNull(model.getCategory());
 
-        LineEntity line = new LineEntity("Cronos");
-        line.setId(1);
-        CategoryEntity category = new CategoryEntity("Cronos Old", line);
-        category.setId(1);
+        LineEntity line = new LineEntity(1, "Cronos");
+        CategoryEntity category = new CategoryEntity(1, "Cronos Old", line);
 
-        model = new ModelEntity("Cronos 6001-A", category);
-        model.setId(1);
+        model = new ModelEntity(1, "Cronos 6001-A", category);
 
         assertEquals(Integer.valueOf(1), model.getId());
         assertEquals("Cronos 6001-A", model.getName());
         assertEquals(category, model.getCategory());
         assertEquals("Cronos 6001-A", model.toString());
-    }
-
-    @Test
-    public void parameterizedConstructorTest() {
-        LineEntity line = new LineEntity("Ares");
-        CategoryEntity category = new CategoryEntity("Ares TB", line);
-
-        ModelEntity model = new ModelEntity("ARES 7021", category);
-
-        assertNull(model.getId());
-        assertEquals("ARES 7021", model.getName());
-        assertEquals(category, model.getCategory());
-        assertEquals("ARES 7021", model.toString());
     }
 }

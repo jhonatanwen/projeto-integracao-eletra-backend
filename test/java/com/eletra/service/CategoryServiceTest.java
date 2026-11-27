@@ -30,17 +30,13 @@ public class CategoryServiceTest {
 
     @Before
     public void setUp(){
-        LineEntity cronosEntity = new LineEntity("Cronos");
-        cronosEntity.setId(lineId);
+        LineEntity cronosEntity = new LineEntity(lineId, "Cronos");
 
-        cronosOldEntity = new CategoryEntity("Cronos Old", cronosEntity);
-        cronosOldEntity.setId(1);
+        cronosOldEntity = new CategoryEntity(1, "Cronos Old", cronosEntity);
 
-        cronosLEntity = new CategoryEntity("Cronos L", cronosEntity);
-        cronosLEntity.setId(2);
+        cronosLEntity = new CategoryEntity(2, "Cronos L", cronosEntity);
 
-        cronosNGEntity = new CategoryEntity("Cronos-NG", cronosEntity);
-        cronosNGEntity.setId(3);
+        cronosNGEntity = new CategoryEntity(3, "Cronos-NG", cronosEntity);
     }
 
     @Test

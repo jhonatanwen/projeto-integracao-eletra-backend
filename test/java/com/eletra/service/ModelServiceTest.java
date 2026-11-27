@@ -31,20 +31,15 @@ public class ModelServiceTest {
 
     @Before
     public void setUp(){
-        LineEntity cronosEntity = new LineEntity("Cronos");
-        cronosEntity.setId(1);
+        LineEntity cronosEntity = new LineEntity(1, "Cronos");
 
-        CategoryEntity cronosOldEntity = new CategoryEntity("Cronos Old", cronosEntity);
-        cronosOldEntity.setId(categoryId);
+        CategoryEntity cronosOldEntity = new CategoryEntity(categoryId, "Cronos Old", cronosEntity);
 
-        cronos6001AEntity = new ModelEntity("Cronos 6001-A", cronosOldEntity);
-        cronos6001AEntity.setId(1);
+        cronos6001AEntity = new ModelEntity(1, "Cronos 6001-A", cronosOldEntity);
 
-        cronos6003Entity = new ModelEntity("Cronos 6003", cronosOldEntity);
-        cronos6003Entity.setId(2);
+        cronos6003Entity = new ModelEntity(2, "Cronos 6003", cronosOldEntity);
 
-        cronos7023Entity = new ModelEntity("Cronos 7023", cronosOldEntity);
-        cronos7023Entity.setId(3);
+        cronos7023Entity = new ModelEntity(3, "Cronos 7023", cronosOldEntity);
     }
 
     @Test

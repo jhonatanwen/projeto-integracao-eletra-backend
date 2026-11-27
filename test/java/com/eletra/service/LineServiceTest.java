@@ -27,11 +27,9 @@ public class LineServiceTest {
 
     @Before
     public void setUp() {
-        cronosEntity = new LineEntity("Cronos");
-        cronosEntity.setId(1);
+        cronosEntity = new LineEntity(1, "Cronos");
 
-        aresEntity = new LineEntity("Ares");
-        aresEntity.setId(2);
+        aresEntity = new LineEntity(2, "Ares");
     }
 
     @Test

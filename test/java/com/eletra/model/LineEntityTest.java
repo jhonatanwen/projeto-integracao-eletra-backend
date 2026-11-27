@@ -12,20 +12,10 @@ public class LineEntityTest {
         assertNull(line.getId());
         assertNull(line.getName());
 
-        line = new LineEntity("Cronos");
-        line.setId(1);
+        line = new LineEntity(1, "Cronos");
 
         assertEquals(Integer.valueOf(1), line.getId());
         assertEquals("Cronos", line.getName());
         assertEquals("Cronos", line.toString());
-    }
-
-    @Test
-    public void parameterizedConstructorTest() {
-        LineEntity line = new LineEntity("Ares");
-
-        assertNull(line.getId());
-        assertEquals("Ares", line.getName());
-        assertEquals("Ares", line.toString());
     }
 }
